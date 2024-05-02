@@ -18,11 +18,11 @@ export default function Experience({
         <h2>Experience</h2>
         <button onClick={handleClick}>&#8964;</button>
       </div>
-      <div className={"content" + (!isShown ? " hidden" : "")}>
+      <div className={"experience-container" + (!isShown ? " hidden" : "")}>
         {experience.root.childIds.map((experienceId) => (
-          <div className="experience" key={experienceId}>
+          <div className="experience-inputs" key={experienceId}>
             <label>
-              Organization
+              <p>Organization <span className="required">required</span></p>
               <input
                 type="text"
                 value={experience[experienceId].organization}
@@ -36,7 +36,7 @@ export default function Experience({
               />
             </label>
             <label>
-              Position
+              <p>Position <span className="required">required</span></p>
               <input
                 type="text"
                 value={experience[experienceId].position}
@@ -50,7 +50,7 @@ export default function Experience({
               />
             </label>
             <label>
-              Start Date
+              <p>Start Date <span className="required">required</span></p>
               <input
                 type="text"
                 value={experience[experienceId].startDate}
@@ -64,7 +64,7 @@ export default function Experience({
               />
             </label>
             <label>
-              End Date
+              <p>End Date <span className="required">required</span></p>
               <input
                 type="text"
                 value={experience[experienceId].endDate}
@@ -77,9 +77,12 @@ export default function Experience({
                 }}
               />
             </label>
-            <p>Contributions</p>
+            <p>Roles/Contributions <span className="required">required</span></p>
             {experience[experienceId].childIds.map((contributionId) => (
-              <div key={contributionId}>
+              <div 
+                className="contribution-container"
+                key={contributionId}
+              >
                 <label>
                   <input
                     type="text"
@@ -110,7 +113,7 @@ export default function Experience({
               Add Contribution
             </button>
             <label>
-              Location
+              <p>Location <span className="recommended">recommended</span></p>
               <input
                 type="text"
                 value={experience[experienceId].location}

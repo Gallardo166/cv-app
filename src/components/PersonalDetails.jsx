@@ -16,9 +16,9 @@ export default function PersonalDetails({ personalDetails, handleChangePersonalD
         <button onClick={handleClick}>&#8964;</button>
       </div>
       <div
-        className={'content' + (!isShown ? ' hidden' : '')}
+        className={'personal-details-inputs' + (!isShown ? ' hidden' : '')}
       >
-        <label htmlFor='full-name'>Full Name</label>
+        <label htmlFor='full-name'>Full Name <span className="required">required</span></label>
         <input 
           id='full-name' 
           type='text'
@@ -27,7 +27,7 @@ export default function PersonalDetails({ personalDetails, handleChangePersonalD
             handleChangePersonalDetails('fullName', e.target.value);
           }}
         />
-        <label htmlFor='phone-number'>Phone Number <span>Required</span></label>
+        <label htmlFor='phone-number'>Phone Number <span className="required">required</span></label>
         <input 
           id='phone-number' 
           type='number' 
@@ -36,16 +36,17 @@ export default function PersonalDetails({ personalDetails, handleChangePersonalD
             handleChangePersonalDetails('phoneNumber', e.target.value);
           }}
         />
-        <label htmlFor='email'>Email <span>Required</span></label>
+        <label htmlFor='email'>Email <span className="required">required</span></label>
         <input 
           id='email' 
           type='email' 
           value={personalDetails.email}
           onChange={(e) => {
+            if (e.target.value === '') return;
             handleChangePersonalDetails('email', e.target.value);
           }}
         />
-        <label htmlFor='linkedin'>LinkedIn Link <span>Recommended</span></label>
+        <label htmlFor='linkedin'>LinkedIn Link <span className="recommended">recommended</span></label>
         <input 
           id='linkedin' 
           type='text' 
@@ -54,7 +55,7 @@ export default function PersonalDetails({ personalDetails, handleChangePersonalD
             handleChangePersonalDetails('linkedIn', e.target.value);
           }}
         />
-        <label htmlFor='github'>GitHub Link <span>Recommended</span></label>
+        <label htmlFor='github'>GitHub Link <span className="recommended">recommended</span></label>
         <input 
           id='github' 
           type='text' 

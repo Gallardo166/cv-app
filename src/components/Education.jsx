@@ -18,11 +18,11 @@ export default function Education({
         <h2>Education</h2>
         <button onClick={handleClick}>&#8964;</button>
       </div>
-      <div className={"content" + (!isShown ? " hidden" : "")}>
+      <div className={"education-container" + (!isShown ? " hidden" : "")}>
         {education.map((education) => (
-          <div className="education" key={education.id}>
+          <div className="education-inputs" key={education.id}>
             <label>
-              Institution
+              <p>Institution <span className="required">required</span></p>
               <input
                 type="text"
                 value={education.institution}
@@ -36,7 +36,7 @@ export default function Education({
               />
             </label>
             <label>
-              Degree
+              <p>Degree <span className="required">required</span></p>
               <input
                 type="text"
                 value={education.degree}
@@ -46,7 +46,7 @@ export default function Education({
               />
             </label>
             <label>
-              Start Date
+              <p>Start Date <span className="required">required</span></p>
               <input
                 type="text"
                 value={education.startDate}
@@ -60,7 +60,7 @@ export default function Education({
               />
             </label>
             <label>
-              End Date
+              <p>End Date <span className="required">required</span></p>
               <input
                 type="text"
                 value={education.endDate}
@@ -74,7 +74,7 @@ export default function Education({
               />
             </label>
             <label>
-              Location
+              <p>Location <span className="recommended">recommended</span></p>
               <input
                 type="text"
                 value={education.location}

@@ -9,6 +9,7 @@ import {
   initialExperience,
 } from "./components/data";
 import { v4 as uuid } from "uuid";
+import "./App.css";
 
 function App() {
   const [mode, setMode] = useState("content");
@@ -112,7 +113,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>CV Builder</h1>
+      <h1 className="title">CV Builder</h1>
       <ModeToggler mode={mode} onChange={handleChangeMode} />
       {mode === "content" ? (
         <Content
