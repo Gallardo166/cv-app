@@ -1,6 +1,6 @@
 export default function ModeToggler({ mode, onChange }) {
   return (
-    <div className='mode-toggler'>
+    <nav className='mode-toggler'>
       <button
         key='content'
         className={mode === 'content' ? 'selected' : null}
@@ -15,6 +15,6 @@ export default function ModeToggler({ mode, onChange }) {
       >
         Customize
       </button>
-    </div>
+    </nav>
   )
 }

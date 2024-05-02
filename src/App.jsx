@@ -6,9 +6,15 @@ import Document from "./components/Document";
 
 
 function App() {
-  const [mode, setMode] = useState("content");
+  const [mode, setMode] = useState('content');
+  const [data, setData] = useState('data');
 
-  function handleChange(targetMode) {
+  function handleChangeData(property, value) {
+    const newData = {...data, [property]: value};
+    setData(newData);
+  }
+
+  function handleChangeMode(targetMode) {
     if (targetMode !== mode) {
       setMode(targetMode);
     }
@@ -16,9 +22,10 @@ function App() {
 
   return (
     <div className="app">
-      <ModeToggler mode={mode} onChange={handleChange}/>
-      {mode === "content" ? <Content /> : <Customize />}
-      <Document />
+      <h1>CV Builder</h1>
+      <ModeToggler mode={mode} onChange={handleChangeMode}/>
+      {mode === "content" ? <Content data={data} handleChangeData={handleChangeData}/> : <Customize />}
+      <Document data={data}/>
     </div>
   );
 }
