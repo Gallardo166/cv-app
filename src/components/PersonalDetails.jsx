@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PersonalDetails({ data, handleChangeData }) {
+export default function PersonalDetails({ personalDetails, handleChangePersonalDetails }) {
   const [isShown, setIsShown] = useState(true);
 
   function handleClick() {
@@ -22,45 +22,45 @@ export default function PersonalDetails({ data, handleChangeData }) {
         <input 
           id='full-name' 
           type='text'
-          value={data.fullName}
+          value={personalDetails.fullName}
           onChange={(e) => {
-            handleChangeData('fullName', e.target.value);
+            handleChangePersonalDetails('fullName', e.target.value);
           }}
         />
         <label htmlFor='phone-number'>Phone Number <span>Required</span></label>
         <input 
           id='phone-number' 
           type='number' 
-          value={data.phoneNumber}
+          value={personalDetails.phoneNumber}
           onChange={(e) => {
-            handleChangeData('phoneNumber', e.target.value);
+            handleChangePersonalDetails('phoneNumber', e.target.value);
           }}
         />
         <label htmlFor='email'>Email <span>Required</span></label>
         <input 
           id='email' 
           type='email' 
-          value={data.email}
+          value={personalDetails.email}
           onChange={(e) => {
-            handleChangeData('email', e.target.value);
+            handleChangePersonalDetails('email', e.target.value);
           }}
         />
         <label htmlFor='linkedin'>LinkedIn Link <span>Recommended</span></label>
         <input 
           id='linkedin' 
           type='text' 
-          value={data.linkedIn}
+          value={personalDetails.linkedIn}
           onChange={(e) => {
-            handleChangeData('linkedIn', e.target.value);
+            handleChangePersonalDetails('linkedIn', e.target.value);
           }}
         />
         <label htmlFor='github'>GitHub Link <span>Recommended</span></label>
         <input 
           id='github' 
           type='text' 
-          value={data.gitHub}
+          value={personalDetails.gitHub}
           onChange={(e) => {
-            handleChangeData('gitHub', e.target.value);
+            handleChangePersonalDetails('gitHub', e.target.value);
           }}
         />
       </div>

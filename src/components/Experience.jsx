@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Experience() {
+export default function Experience({ experience, handleChangeExperience }) {
   const [isShown, setIsShown] = useState(false);
 
   function handleClick() {
