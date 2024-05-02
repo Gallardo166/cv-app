@@ -1,19 +1,41 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 const initialPersonalDetails = {
-  fullName: 'Full Name',
+  fullName: "Full Name",
   phoneNumber: 11111,
-  email: 'email@gmail.com',
-  linkedIn: 'linkedin.com/in/username/',
-  gitHub: 'github.com/username',
+  email: "email@gmail.com",
+  linkedIn: "linkedin.com/in/username/",
+  gitHub: "github.com/username",
 };
 
 const initialEducation = [
-  {id: uuid(), institution: 'Institution', degree:'Bachelor of Studies', startDate: '1/2020', endDate: '11/2023'},
+  {
+    id: uuid(),
+    institution: "Institution",
+    degree: "Bachelor of Studies",
+    startDate: "1/2020",
+    endDate: "11/2023",
+    location: "Earth",
+  },
 ];
 
-const initialExperience = [
-  {id: uuid(), organization: 'Organization', startDate: '5/2024', endDate: 'present'},
-]
+const initialExperience = {
+  root: {
+    childIds: [1],
+  },
+  1: {
+    id: 1,
+    organization: "Organization",
+    position: "Employee",
+    location: "Earth",
+    childIds: [2],
+    startDate: "5/2024",
+    endDate: "present",
+  },
+  2: {
+    id: 2,
+    contribution: "Did this",
+  },
+};
 
-export {initialPersonalDetails, initialEducation, initialExperience};
+export { initialPersonalDetails, initialEducation, initialExperience };
