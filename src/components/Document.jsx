@@ -5,9 +5,10 @@ export default function Document({
   education,
   experience,
   skills,
+  styles,
 }) {
   return (
-    <div className="document">
+    <div className="document" style={styles}>
       <h1>{personalDetails.fullName}</h1>
       <div className="details">
         <h3>{personalDetails.phoneNumber}</h3>
@@ -57,7 +58,7 @@ export default function Document({
             <h5 className="location">{experience[experienceId].location}</h5>
             <ul>
               {experience[experienceId].childIds.map((contributionId) => (
-                <li key={contributionId}>
+                <li key={contributionId} style={styles}>
                   {experience[contributionId].contribution}
                 </li>
               ))}

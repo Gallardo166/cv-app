@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "lmroman";
+  src: url(../../public/fonts/lmroman9-regular.otf);
+  font-weight: 200;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "lmroman";
+  src: url(../../public/fonts/lmroman9-bold.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lmroman";
+  src: url(../../public/fonts/lmromancaps10-regular.otf);
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lmroman";
+  src: url(../../public/fonts/lmroman9-italic.otf);
+  font-weight: 200;
+  font-style: italic;
+}
+
 .document * {
   margin: 0;
   padding: 0;
@@ -100,7 +128,7 @@ div > h5 {
 
 .education h2, .experience h2, .skills h2 {
   font-size: 1.8vw;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .experience ul {

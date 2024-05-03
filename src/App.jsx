@@ -20,6 +20,9 @@ function App() {
   const [education, setEducation] = useState(initialEducation);
   const [experience, setExperience] = useState(initialExperience);
   const [skills, setSkills] = useState(initialSkills);
+  const [styles, setStyles] = useState({
+    fontFamily: 'times new roman',
+  })
 
   function handleChangePersonalDetails(property, value) {
     const newPersonalDetails = { ...personalDetails, [property]: value };
@@ -158,6 +161,13 @@ function App() {
     }
   }
 
+  function handleChangeStyles(property, value) {
+    if (value !== styles[property]) {
+      const newStyles = {...styles, [property]: value};
+      setStyles(newStyles);
+    }
+  }
+
   return (
     <div className="app">
       <h1 className="title">CV Builder</h1>
@@ -180,9 +190,12 @@ function App() {
           handleAddSkills={handleAddSkills}
         />
       ) : (
-        <Customize />
+        <Customize
+          handleChangeStyles={handleChangeStyles}
+         />
       )}
       <Document
+        styles={styles}
         personalDetails={personalDetails}
         education={education}
         experience={experience}
