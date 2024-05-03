@@ -14,15 +14,22 @@ export default function Education({
 
   return (
     <section>
-      <div className="header">
+      <div className="header" onClick={handleClick}>
         <h2>Education</h2>
-        <button onClick={handleClick}>&#8964;</button>
+        <h2 className={"arrow" + (!isShown ? " down" : " up")}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>chevron-down</title>
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </svg>
+        </h2>
       </div>
       <div className={"education-container" + (!isShown ? " hidden" : "")}>
-        {education.map((education) => (
+        {education.map((education, index) => (
           <div className="education-inputs" key={education.id}>
             <label>
-              <p>Institution <span className="required">required</span></p>
+              <p>
+                Institution <span className="required">required</span>
+              </p>
               <input
                 type="text"
                 value={education.institution}
@@ -36,7 +43,9 @@ export default function Education({
               />
             </label>
             <label>
-              <p>Degree <span className="required">required</span></p>
+              <p>
+                Degree <span className="required">required</span>
+              </p>
               <input
                 type="text"
                 value={education.degree}
@@ -46,7 +55,9 @@ export default function Education({
               />
             </label>
             <label>
-              <p>Start Date <span className="required">required</span></p>
+              <p>
+                Start Date <span className="required">required</span>
+              </p>
               <input
                 type="text"
                 value={education.startDate}
@@ -60,7 +71,9 @@ export default function Education({
               />
             </label>
             <label>
-              <p>End Date <span className="required">required</span></p>
+              <p>
+                End Date <span className="required">required</span>
+              </p>
               <input
                 type="text"
                 value={education.endDate}
@@ -74,7 +87,9 @@ export default function Education({
               />
             </label>
             <label>
-              <p>Location <span className="recommended">recommended</span></p>
+              <p>
+                Location <span className="recommended">recommended</span>
+              </p>
               <input
                 type="text"
                 value={education.location}
@@ -94,6 +109,7 @@ export default function Education({
             >
               Delete
             </button>
+            <hr></hr>
           </div>
         ))}
         <button
@@ -101,7 +117,7 @@ export default function Education({
             handleAddEducation();
           }}
         >
-          Add
+          Add Education
         </button>
       </div>
     </section>

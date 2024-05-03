@@ -1,19 +1,21 @@
 .content {
-  width: 85%;
+  width: 90%;
   margin-bottom: 1.8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
 }
 
 section > .hidden {
   max-height: 0px;
+  padding: 0px;
   overflow: hidden;
-  transition: max-height .3s ease-out;
+  transition: max-height .3s ease-out, padding 0.05s 0.25s;
 }
 
 section > :not(.hidden) {
-  max-height: 240px;
+  max-height: 270px;
   overflow-x: hidden;
   overflow-y: scroll;
   transition: max-height .3s ease-in;
@@ -21,15 +23,28 @@ section > :not(.hidden) {
 
 section {
   width: 95%;
+  box-shadow: .1em .1em 1em #dfdfdf;
+  background-color: #fcfcfc;
+  border-radius: 6px;
 }
 
 section > .header {
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fcfcfc;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.personal-details-inputs, .education-container, .education-inputs, .education-inputs > label, .experience-inputs, .experience-inputs > label, div.contribution-container, .skills-container, .skills-inputs, .skills-input > label {
+.header > h2 {
+  margin: 10px 0;
+}
+
+.personal-details-inputs, .education-container, .education-inputs, .education-inputs > label, .experience-container, .experience-inputs, .experience-inputs > label, .contribution-container, .skills-container, .skills-inputs, .skills-input > label, .skill-container {
+  background-color: #fcfcfc;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -52,6 +67,62 @@ span {
 span.recommended {
   color: #21b521;
 }
+
 span.required {
   color: #d82626;
+}
+
+.personal-details-inputs, .education-inputs, .experience-inputs, .skills-inputs {
+  padding: 16px;
+}
+
+h2.arrow {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  transition: transform .3s ease-in-out;
+}
+
+h2 > svg {
+  width: 24px;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+  transition: transform .3s ease-in-out;
+}
+
+input {
+  margin-bottom: 6px;
+}
+
+.education-inputs > button {
+  margin-top: 8px;
+  align-self: center;
+}
+
+.education-container > button, .experience-container > button, .skills-container > button {
+  margin: 16px 0;
+  align-self: center;
+}
+
+.experience-inputs > button, .skills-inputs > button {
+  margin: 8px 0;
+  align-self: center;
+}
+
+hr {
+  align-self: center;
+  margin: 4px 0 -15px 0;
+  width: 100%;
+  border: 0.01vw solid #414040;
+}
+
+.contribution-container, .skill-container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.contribution-container > button , .skill-container > button {
+  margin-bottom: 6px;
 }

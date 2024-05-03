@@ -1,3 +1,5 @@
+import "../styles/ModeToggler.css";
+
 export default function ModeToggler({ mode, onChange }) {
   return (
     <nav className="mode-toggler">

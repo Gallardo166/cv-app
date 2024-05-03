@@ -1,0 +1,27 @@
+.mode-toggler {
+  margin-bottom: min(4vw, 30px);
+  padding: 16px;
+  background-color: #fcfcfc;
+  border-radius: 5px;
+  box-shadow: .1em .1em 1em #dfdfdf;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mode-toggler > button {
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #fcfcfc;
+  font-size: 1rem;
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+
+.mode-toggler > button.selected {
+  background-color: #dddddd;
+  transition: background-color .3s ease-out
+}

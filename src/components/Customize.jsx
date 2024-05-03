@@ -1,3 +1,5 @@
+import "../styles/Customize.css";
+
 export default function Customize({ handleChangeStyles }) {
   return (
     <div className="customize">
