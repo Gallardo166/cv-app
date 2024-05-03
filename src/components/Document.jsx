@@ -106,7 +106,7 @@ export default function Document({
           <hr></hr>
           {skills.root.childIds.map((categoryId) => (
             <div key={categoryId}>
-              {skills[categoryId].childIds.length > 0 ? (
+              {skills[categoryId].category && skills[categoryId].childIds.length > 0 ? (
                 <h3>{skills[categoryId].category + ":"}</h3>
               ) : (
                 <h3>{skills[categoryId].category}</h3>
