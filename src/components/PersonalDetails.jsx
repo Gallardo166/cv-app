@@ -52,7 +52,6 @@ export default function PersonalDetails({
           type="email"
           value={personalDetails.email}
           onChange={(e) => {
-            if (e.target.value === "") return;
             handleChangePersonalDetails("email", e.target.value);
           }}
         />
