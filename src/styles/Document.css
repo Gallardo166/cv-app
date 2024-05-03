@@ -1,0 +1,145 @@
+.document * {
+  margin: 0;
+  padding: 0;
+}
+
+.document {
+  box-sizing: border-box;
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --ratio: calc(2.7403 / 4);
+}
+
+.document > h1 {
+  font-size: 4vw;
+}
+
+.details, .details div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.details, .education {
+  margin-bottom: 1.8vw;
+}
+
+.details h2 {
+  font-size: 1.9vw;
+  font-weight: 200;
+}
+
+.details h3 {
+  width: max-content;
+  font-size: 1.6vw;
+  font-weight: 200;
+}
+
+.education, .experience {
+  width: 100%;
+}
+
+.education > hr, .experience > hr {
+  border: 0.01vw solid #414040;
+  margin-bottom: 0.6vw;
+}
+
+.education > div {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  align-items: center;
+  padding-left: 0.6vw;
+  margin-bottom: 0.8vw;
+}
+
+.experience > div {
+  display: grid;
+  grid-template: 1fr 1fr auto / 1fr 1fr;
+  align-items: center;
+  padding-left: 0.6vw;
+  margin-bottom: 0.8vw;
+}
+
+.experience > div > ul {
+  grid-area: 3 / 1 / span 1 / span 2;
+}
+
+div > h3 {
+  font-size: 1.7vw;
+}
+
+div > h4 {
+  font-size: 1.7vw;
+  font-weight: 400;
+  justify-self: end;
+}
+
+div > h5 {
+  font-size: 1.6vw;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.education > div > .date, .experience > div > .location {
+  justify-self: end;
+}
+
+.education h2, .experience h2 {
+  font-size: 1.8vw;
+  font-weight: 200;
+}
+
+.experience ul {
+  margin-top: 0.6vw;
+  margin-left: 2.4vw;
+  font-size: 1.6vw;
+}
+
+@media screen and (min-width: 1199px) {
+  .document {
+    padding: 2.7403vw;
+  }
+
+  .document > h1 {
+    font-size: calc(var(--ratio) * 4vw);
+  }
+
+  .details, .education {
+    margin-bottom: calc(var(--ratio) * 1.8vw);
+  }
+
+  .details h2 {
+    font-size: calc(var(--ratio) * 1.9vw);
+  }
+
+  .details h3, div > h5, .experience ul {
+    font-size: calc(var(--ratio) * 1.6vw);
+  }
+
+  .education > hr, .experience > hr {
+    border: calc(var(--ratio) * 0.01vw) solid #414040;
+    margin-bottom: calc(var(--ratio) * 0.6vw);
+  }
+
+  .education > div, .experience > div {
+    padding-left: calc(var(--ratio) * 0.6vw);
+    margin-bottom: calc(var(--ratio) * 0.8vw);
+  }
+
+  div > h3, div > h4 {
+    font-size: calc(var(--ratio) * 1.7vw);
+  }
+
+  .education h2, .experience h2 {
+    font-size: calc(var(--ratio) * 1.8vw);
+  }
+
+  .experience ul {
+    margin-top: calc(var(--ratio) * 0.6vw);
+    margin-left: calc(var(--ratio) * 2.4vw);
+  }
+
+}
