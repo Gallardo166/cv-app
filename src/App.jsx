@@ -7,6 +7,7 @@ import {
   initialPersonalDetails,
   initialEducation,
   initialExperience,
+  initialSkills,
 } from "./components/data";
 import { v4 as uuid } from "uuid";
 import "./App.css";
@@ -18,6 +19,7 @@ function App() {
   );
   const [education, setEducation] = useState(initialEducation);
   const [experience, setExperience] = useState(initialExperience);
+  const [skills, setSkills] = useState(initialSkills);
 
   function handleChangePersonalDetails(property, value) {
     const newPersonalDetails = { ...personalDetails, [property]: value };
@@ -82,7 +84,6 @@ function App() {
       newChild = {
         id: newId,
         contribution: "",
-        childIds: [],
       };
     } else {
       newChild = {
@@ -105,6 +106,52 @@ function App() {
     setExperience(newExperience);
   }
 
+  function handleChangeSkills(id, property, value) {
+    const newSkills= {
+      ...skills,
+      [id]: { ...skills[id], [property]: value },
+    };
+    setSkills(newSkills);
+  }
+
+  function handleDeleteSkills(parentId, childId) {
+    const newSkills = {
+      ...skills,
+      [parentId]: {
+        ...skills[parentId],
+        childIds: skills[parentId].childIds.filter((id) => id !== childId),
+      },
+    };
+    setSkills(newSkills);
+  }
+
+  function handleAddSkills(parentId, type) {
+    let newChild;
+    const newId = uuid();
+    if (type === "skill") {
+      newChild = {
+        id: newId,
+        skill: "",
+      };
+    } else {
+      newChild = {
+        id: newId,
+        category: "",
+        childIds: [],
+      };
+    }
+
+    const newSkills = {
+      ...skills,
+      [parentId]: {
+        ...skills[parentId],
+        childIds: skills[parentId].childIds.concat(newId),
+      },
+      [newId]: newChild,
+    };
+    setSkills(newSkills);
+  }
+
   function handleChangeMode(targetMode) {
     if (targetMode !== mode) {
       setMode(targetMode);
@@ -120,6 +167,7 @@ function App() {
           personalDetails={personalDetails}
           education={education}
           experience={experience}
+          skills={skills}
           handleChangePersonalDetails={handleChangePersonalDetails}
           handleChangeEducation={handleChangeEducation}
           handleDeleteEducation={handleDeleteEducation}
@@ -127,6 +175,9 @@ function App() {
           handleChangeExperience={handleChangeExperience}
           handleDeleteExperience={handleDeleteExperience}
           handleAddExperience={handleAddExperience}
+          handleChangeSkills={handleChangeSkills}
+          handleDeleteSkills={handleDeleteSkills}
+          handleAddSkills={handleAddSkills}
         />
       ) : (
         <Customize />
@@ -135,6 +186,7 @@ function App() {
         personalDetails={personalDetails}
         education={education}
         experience={experience}
+        skills={skills}
       />
     </div>
   );

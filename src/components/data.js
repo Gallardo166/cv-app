@@ -38,4 +38,19 @@ const initialExperience = {
   },
 };
 
-export { initialPersonalDetails, initialEducation, initialExperience };
+const initialSkills = {
+  root: {
+    childIds: [1],
+  },
+  1: {
+    id: 1,
+    category: "Languages",
+    childIds: [2],
+  },
+  2: {
+    id: 2,
+    skill: "JavaScript",
+  }
+}
+
+export { initialPersonalDetails, initialEducation, initialExperience, initialSkills };

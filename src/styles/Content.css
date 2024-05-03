@@ -1,5 +1,6 @@
 .content {
   width: 85%;
+  margin-bottom: 1.8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +29,7 @@ section > .header {
   align-items: center;
 }
 
-.personal-details-inputs, .education-container, .education-inputs, .education-inputs > label, .experience-inputs, .experience-inputs > label, div.contribution-container {
+.personal-details-inputs, .education-container, .education-inputs, .education-inputs > label, .experience-inputs, .experience-inputs > label, div.contribution-container, .skills-container, .skills-inputs, .skills-input > label {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -38,7 +39,7 @@ p {
   margin: 0;
 }
 
-.contribution-container > label > input {
+label > input {
   box-sizing: border-box;
   width: 100%;
 }

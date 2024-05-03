@@ -1,6 +1,11 @@
 import "../styles/Document.css";
 
-export default function Document({ personalDetails, education, experience }) {
+export default function Document({
+  personalDetails,
+  education,
+  experience,
+  skills,
+}) {
   return (
     <div className="document">
       <h1>{personalDetails.fullName}</h1>
@@ -57,6 +62,22 @@ export default function Document({ personalDetails, education, experience }) {
                 </li>
               ))}
             </ul>
+          </div>
+        ))}
+      </div>
+      <div className="skills">
+        <h2>Technical Skills</h2>
+        <hr></hr>
+        {skills.root.childIds.map((categoryId) => (
+          <div key={categoryId}>
+            <h3>{skills[categoryId].category + ":"}</h3>
+            {skills[categoryId].childIds.map((skillId) => (
+              <h5 key={skillId}>
+                {(skills[categoryId].childIds.indexOf(skillId) === 0
+                  ? ""
+                  : ", ") + skills[skillId].skill}
+              </h5>
+            ))}
           </div>
         ))}
       </div>
