@@ -12,7 +12,9 @@ export default function Customize({ handleChangeStyles }) {
         }}
       >
         <option value="arial">Arial</option>
-        <option value="times new roman" selected>Times New Roman</option>
+        <option value="times new roman" selected>
+          Times New Roman
+        </option>
         <option value="helvetica">Helvetica</option>
         <option value="lmroman">LM Roman</option>
       </select>

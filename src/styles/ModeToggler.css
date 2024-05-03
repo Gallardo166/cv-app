@@ -3,7 +3,7 @@
   padding: 16px;
   background-color: #fcfcfc;
   border-radius: 5px;
-  box-shadow: .1em .1em 1em #dfdfdf;
+  box-shadow: 0.1em 0.1em 1em #dfdfdf;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -16,12 +16,12 @@
   border-radius: 6px;
   background-color: #fcfcfc;
   font-size: 1rem;
-  transition: background-color .3s ease-in;
+  transition: background-color 0.3s ease-in;
   cursor: pointer;
+  color: rgb(48, 48, 48);
 }
-
 
 .mode-toggler > button.selected {
   background-color: #dddddd;
-  transition: background-color .3s ease-out
+  transition: background-color 0.3s ease-out;
 }

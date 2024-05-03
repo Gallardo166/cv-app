@@ -2,7 +2,7 @@
   font-family: "lmroman";
   src: url(../../public/fonts/lmroman9-regular.otf);
   font-weight: 200;
-  font-style: normal
+  font-style: normal;
 }
 
 @font-face {
@@ -41,14 +41,16 @@
   align-items: center;
   --ratio: calc(2.7403 / 4);
   background-color: #fcfcfc;
-  box-shadow: .1em .1em 1em #dfdfdf;
+  box-shadow: 0.1em 0.1em 1em #dfdfdf;
+  color: black;
 }
 
 .document > h1 {
   font-size: 4vw;
 }
 
-.details, .details div {
+.details,
+.details div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -59,7 +61,9 @@
   margin-bottom: 2.6vw;
 }
 
-.education, .experience, .skills {
+.education,
+.experience,
+.skills {
   margin-bottom: 2vw;
 }
 
@@ -74,11 +78,15 @@
   font-weight: 200;
 }
 
-.education, .experience, .skills {
+.education,
+.experience,
+.skills {
   width: 100%;
 }
 
-.education > hr, .experience > hr, .skills > hr {
+.education > hr,
+.experience > hr,
+.skills > hr {
   border: 0.01vw solid #414040;
   margin-bottom: 0.8vw;
   width: 100%;
@@ -135,11 +143,14 @@ div > h5 {
   transform: translateY(0.1vw);
 }
 
-.education > div > .date, .experience > div > .location {
+.education > div > .date,
+.experience > div > .location {
   justify-self: end;
 }
 
-.education h2, .experience h2, .skills h2 {
+.education h2,
+.experience h2,
+.skills h2 {
   font-size: 1.8vw;
   font-weight: 100;
 }
@@ -150,16 +161,17 @@ div > h5 {
   font-size: 1.6vw;
 }
 
-.print, .download {
+.print,
+.download {
   cursor: pointer;
   width: 4vw;
   padding: 2px 2px 0 2px;
   outline: none;
   border: none;
-  background-color:rgb(211, 210, 210);
+  background-color: rgb(211, 210, 210);
   border-radius: 5px;
   position: absolute;
-  box-shadow: .1em .1em 1em #d8d8d8;
+  box-shadow: 0.1em 0.1em 1em #d8d8d8;
 }
 
 .print {
@@ -173,7 +185,7 @@ div > h5 {
 }
 
 .print:hover {
-  background-color:rgb(222, 222, 222);
+  background-color: rgb(222, 222, 222);
 }
 
 @media screen and (min-width: 1199px) {
@@ -189,7 +201,9 @@ div > h5 {
     margin-bottom: calc(var(--ratio) * 2.6vw);
   }
 
-  .education, .experience, .skills {
+  .education,
+  .experience,
+  .skills {
     margin-bottom: calc(var(--ratio) * 2vw);
   }
 
@@ -197,16 +211,21 @@ div > h5 {
     font-size: calc(var(--ratio) * 1.9vw);
   }
 
-  .details h3, div > h5, .experience ul {
+  .details h3,
+  div > h5,
+  .experience ul {
     font-size: calc(var(--ratio) * 1.6vw);
   }
 
-  .education > hr, .experience > hr, .skills > hr {
+  .education > hr,
+  .experience > hr,
+  .skills > hr {
     border: calc(var(--ratio) * 0.01vw) solid #414040;
     margin-bottom: calc(var(--ratio) * 0.8vw);
   }
 
-  .education > div, .experience > div {
+  .education > div,
+  .experience > div {
     padding-left: calc(var(--ratio) * 0.6vw);
     margin-bottom: calc(var(--ratio) * 0.8vw);
   }
@@ -216,11 +235,14 @@ div > h5 {
     margin-bottom: calc(var(--ratio) * 0.4vw);
   }
 
-  div > h3, div > h4 {
+  div > h3,
+  div > h4 {
     font-size: calc(var(--ratio) * 1.7vw);
   }
 
-  .education h2, .experience h2, .skills h2 {
+  .education h2,
+  .experience h2,
+  .skills h2 {
     font-size: calc(var(--ratio) * 1.8vw);
   }
 
@@ -229,7 +251,8 @@ div > h5 {
     margin-left: calc(var(--ratio) * 2.4vw);
   }
 
-  .print, .download {
+  .print,
+  .download {
     width: calc(var(--ratio) * 4vw);
     top: calc(var(--ratio) * 2.4vw);
   }
@@ -241,5 +264,4 @@ div > h5 {
   .download {
     right: calc(var(--ratio) * 2.2vw);
   }
-
 }

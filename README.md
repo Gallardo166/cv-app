@@ -3,8 +3,9 @@
 ### Concepts learnt
 
 1. React
-  - Setting up react environment
-  - State and props
+
+- Setting up react environment
+- State and props
 
 2. Printing and saving div as image
 

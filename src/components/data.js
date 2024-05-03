@@ -50,7 +50,12 @@ const initialSkills = {
   2: {
     id: 2,
     skill: "JavaScript",
-  }
-}
+  },
+};
 
-export { initialPersonalDetails, initialEducation, initialExperience, initialSkills };
+export {
+  initialPersonalDetails,
+  initialEducation,
+  initialExperience,
+  initialSkills,
+};

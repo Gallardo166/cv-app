@@ -38,7 +38,7 @@ export default function Content({
         handleDeleteExperience={handleDeleteExperience}
         handleAddExperience={handleAddExperience}
       />
-      <Skills 
+      <Skills
         skills={skills}
         handleChangeSkills={handleChangeSkills}
         handleDeleteSkills={handleDeleteSkills}

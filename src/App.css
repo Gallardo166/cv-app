@@ -1,5 +1,6 @@
 html {
   background-color: rgb(235, 234, 236);
+  color: rgb(48, 48, 48);
 }
 
 .app {
@@ -31,7 +32,8 @@ html {
     grid-area: 2 / 1 / span 1 / span 1;
   }
 
-  .content, .customize {
+  .content,
+  .customize {
     grid-area: 3 / 1 / span 1 / span 1;
     align-self: start;
   }
@@ -48,13 +50,14 @@ html {
   .document {
     visibility: visible;
     width: 100%;
-    height:100%;
-    position:absolute;
-    top:0px;
-    bottom:0px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
     margin-top: 0px !important;
   }
-  .print, .download {
+  .print,
+  .download {
     visibility: hidden;
   }
 }

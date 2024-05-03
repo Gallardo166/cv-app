@@ -21,8 +21,8 @@ function App() {
   const [experience, setExperience] = useState(initialExperience);
   const [skills, setSkills] = useState(initialSkills);
   const [styles, setStyles] = useState({
-    fontFamily: 'times new roman',
-  })
+    fontFamily: "times new roman",
+  });
 
   function handleChangePersonalDetails(property, value) {
     const newPersonalDetails = { ...personalDetails, [property]: value };
@@ -110,7 +110,7 @@ function App() {
   }
 
   function handleChangeSkills(id, property, value) {
-    const newSkills= {
+    const newSkills = {
       ...skills,
       [id]: { ...skills[id], [property]: value },
     };
@@ -163,7 +163,7 @@ function App() {
 
   function handleChangeStyles(property, value) {
     if (value !== styles[property]) {
-      const newStyles = {...styles, [property]: value};
+      const newStyles = { ...styles, [property]: value };
       setStyles(newStyles);
     }
   }
@@ -190,9 +190,7 @@ function App() {
           handleAddSkills={handleAddSkills}
         />
       ) : (
-        <Customize
-          handleChangeStyles={handleChangeStyles}
-         />
+        <Customize handleChangeStyles={handleChangeStyles} />
       )}
       <Document
         styles={styles}
